@@ -4,6 +4,10 @@ import requests
 from PIL import ImageTk, Image
 from io import BytesIO
 
+def get_dog_image():
+
+
+
 def show_image():
     image_url = get_dog_image()
     if image_url:
@@ -18,9 +22,6 @@ def show_image():
             label.img = img
         except Exception as e:
             mb.showerror("Ошибка", f"Не удалось загрузить изображение: {e}")
-
-
-
 
 
 window = Tk()
