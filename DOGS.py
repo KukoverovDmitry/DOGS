@@ -5,6 +5,15 @@ from PIL import ImageTk, Image
 from io import BytesIO
 
 def get_dog_image():
+    try:
+        response = requests.get("https://dog.ceo/api/breed//image/random")
+        response.raise_for_status()
+        data = response.json()
+        return data['message']
+    except Exception as e:
+        mb.showerror("Error", f"Error: {e}")
+        return None
+    d
 
 
 
@@ -18,6 +27,7 @@ def show_image():
             img = Image.open(img_data)
 
             img.thumbnail((300, 300))
+            img = ImageTk.PhotoImage(img)
             label.congiture(image=img)
             label.img = img
         except Exception as e:
